@@ -1,0 +1,5 @@
+constrainedLayer=2.0, lrate=0.001, p_coef_beta=1.0
+constrainedLayer=1.0, lrate=0.001, p_coef_beta=1.0
+constrainedLayer=2.0, lrate=0.002, p_coef_beta=5.0
+constrainedLayer=2.0, lrate=0.001, p_coef_beta=1.0
+constrainedLayer=2.0, lrate=0.002, p_coef_beta=1.0

@@ -203,9 +203,18 @@ def evaluate_cont_ate(predictions, data, i_exp, I_subset=None,
     x = data['x'][:,:,i_exp]
     t = data['t'][:,i_exp]
     yf = data['yf'][:,i_exp]
-    ycf = data['ycf'][:,i_exp]
-    mu0 = data['mu0'][:,i_exp]
-    mu1 = data['mu1'][:,i_exp]
+    
+    # Check if dataset has mu0 and mu1 (IHDP) or not (TWINS)
+    has_mu = 'mu0' in data and 'mu1' in data and data['mu0'] is not None and data['mu1'] is not None
+    has_ycf = 'ycf' in data and data['ycf'] is not None
+    
+    if has_ycf:
+        ycf = data['ycf'][:,i_exp]
+    
+    if has_mu:
+        mu0 = data['mu0'][:,i_exp]
+        mu1 = data['mu1'][:,i_exp]
+    
     yf_p = predictions[:,0]
     ycf_p = predictions[:,1]
     if bin_or_cont == 0:
@@ -218,11 +227,25 @@ def evaluate_cont_ate(predictions, data, i_exp, I_subset=None,
         yf_p = yf_p[I_subset]
         ycf_p = ycf_p[I_subset]
         yf = yf[I_subset]
-        ycf = ycf[I_subset]
-        mu0 = mu0[I_subset]
-        mu1 = mu1[I_subset]
+        if has_ycf:
+            ycf = ycf[I_subset]
+        if has_mu:
+            mu0 = mu0[I_subset]
+            mu1 = mu1[I_subset]
 
-    eff = mu1-mu0
+    # Calculate ground truth effect
+    # For IHDP: use mu1 - mu0
+    # For TWINS: use ycf - yf for controls, yf - ycf for treated
+    if has_mu:
+        eff = mu1 - mu0
+    elif has_ycf:
+        # TWINS: calculate effect from observed and counterfactual outcomes
+        eff = ycf - yf
+        eff[t > 0] = -eff[t > 0]  # For treated units, effect is yf - ycf
+    else:
+        # No ground truth available, use predictions as placeholder
+        eff = ycf_p - yf_p
+        eff[t > 0] = -eff[t > 0]
 
     eff_pred = ycf_p - yf_p;
     eff_pred[t>0] = -eff_pred[t>0];
@@ -230,7 +253,10 @@ def evaluate_cont_ate(predictions, data, i_exp, I_subset=None,
     pehe = np.sqrt(np.mean(np.square(eff_pred-eff)))
     
     rmse_fact = np.sqrt(np.mean(np.square(yf_p-yf)))
-    rmse_cfact = np.sqrt(np.mean(np.square(ycf_p-ycf)))
+    if has_ycf:
+        rmse_cfact = np.sqrt(np.mean(np.square(ycf_p-ycf)))
+    else:
+        rmse_cfact = 0.0  # No counterfactual ground truth available
     
     ite_pred = ycf_p - yf
     ite_pred[t>0] = -ite_pred[t>0]
@@ -388,9 +414,11 @@ def evaluate_result(result, data, validation=False, multiple_exps=False, binary=
 
             if mode == 'ATE':
                 if binary:
+                    # Jobs dataset: use binary evaluation, calculate policy risk and ATT
                     eval_result = evaluate_bin_att(predictions[:,:,i_rep,i_out],
                         data, i_exp, I_valid_rep, compute_policy_curve, nn_t=nn_t, nn_c=nn_c, bin_or_cont = bin_or_cont)
                 else:
+                    # IHDP/TWINS dataset: use continuous evaluation, calculate PEHE and ATE
                     eval_result = evaluate_cont_ate(predictions[:,:,i_rep,i_out],
                         data, i_exp, I_valid_rep, compute_policy_curve, nn_t=nn_t, nn_c=nn_c, bin_or_cont = bin_or_cont)
             elif mode == 'ATT':

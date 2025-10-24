@@ -123,14 +123,27 @@ def load_data(datapath):
     except:
         ymul = 1
         yadd = 0
+    
+    # Load ycf (counterfactual outcome) if available
     try:
         ycfs = arr['ycf']
-        mu0s = arr['mu0']
-        mu1s = arr['mu1']
         HAVE_TRUTH = True
     except:
+        ycfs = None
+        HAVE_TRUTH = False
+    
+    # Load mu0 and mu1 (potential outcomes) if available
+    # Note: TWINS has ycf but not mu0/mu1; IHDP has both
+    try:
+        mu0s = arr['mu0']
+        mu1s = arr['mu1']
+    except:
+        mu0s = None
+        mu1s = None
+    
+    if not HAVE_TRUTH:
         print ('Couldn\'t find ground truth. Proceeding...')
-        ycfs = None; mu0s = None; mu1s = None
+    
     if ate == None:
         data = {'x': xs, 't': ts, 'e': es, 'yf': yfs, 'ycf': ycfs, \
                 'mu0': mu0s, 'mu1': mu1s, 'ate': ate, 'YMUL': ymul, \

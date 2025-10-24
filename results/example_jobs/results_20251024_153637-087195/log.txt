@@ -1,0 +1,86 @@
+Training with hyperparameters: p_coef_y=1, p_coef_alpha=0.01, p_coef_beta=1, p_coef_gamma=0.01, p_coef_mu=5, p_coef_lambda=0.001. 
+Training data: C:/Users/0702ty/OneDrive/Desktop/DRLECB/data/jobs_DW_bin.new.10.train.npz
+Test data:     C:/Users/0702ty/OneDrive/Desktop/DRLECB/data/jobs_DW_bin.new.10.test.npz
+Loaded data with shape [17]
+Defining graph...
+
+Training on experiment 1/10...
+0	Obj: 0.710,	F: 0.692,	Cf: nan,	Imb: 0.14,	Val: 0.692,	ValImb: 0.22,	ValObj: 0.71,	Acc: 84.88%
+100	Obj: 0.261,	F: 0.249,	Cf: nan,	Imb: 0.0041,	Val: 0.328,	ValImb: 0.013,	ValObj: 0.33,	Acc: 90.22%
+200	Obj: 0.198,	F: 0.195,	Cf: nan,	Imb: 0.0069,	Val: 0.375,	ValImb: 0.005,	ValObj: 0.38,	Acc: 92.83%
+299	Obj: 0.164,	F: 0.172,	Cf: nan,	Imb: 0.012,	Val: 0.464,	ValImb: 0.016,	ValObj: 0.47,	Acc: 93.33%
+results/example_jobs/results_20251024_153637-087195/w/w_999
+Saving result to results/example_jobs/results_20251024_153637-087195/...
+
+Training on experiment 2/10...
+0	Obj: 0.708,	F: 0.692,	Cf: nan,	Imb: 0.18,	Val: 0.692,	ValImb: 0.19,	ValObj: 0.70,	Acc: 85.27%
+100	Obj: 0.256,	F: 0.238,	Cf: nan,	Imb: 0.019,	Val: 0.313,	ValImb: 0.075,	ValObj: 0.31,	Acc: 90.33%
+200	Obj: 0.205,	F: 0.199,	Cf: nan,	Imb: 0.0059,	Val: 0.407,	ValImb: 0.031,	ValObj: 0.41,	Acc: 92.11%
+299	Obj: 0.212,	F: 0.224,	Cf: nan,	Imb: 0.028,	Val: 0.378,	ValImb: 0.1,	ValObj: 0.38,	Acc: 91.22%
+results/example_jobs/results_20251024_153637-087195/w/w_999
+Saving result to results/example_jobs/results_20251024_153637-087195/...
+
+Training on experiment 3/10...
+0	Obj: 0.707,	F: 0.693,	Cf: nan,	Imb: 0.2,	Val: 0.692,	ValImb: 0.19,	ValObj: 0.71,	Acc: 84.77%
+100	Obj: 0.263,	F: 0.250,	Cf: nan,	Imb: 0.034,	Val: 0.290,	ValImb: 0.026,	ValObj: 0.29,	Acc: 90.49%
+200	Obj: 0.205,	F: 0.200,	Cf: nan,	Imb: 0.017,	Val: 0.364,	ValImb: 0.034,	ValObj: 0.37,	Acc: 92.00%
+299	Obj: 0.169,	F: 0.172,	Cf: nan,	Imb: 0.0092,	Val: 0.415,	ValImb: 0.025,	ValObj: 0.42,	Acc: 92.94%
+results/example_jobs/results_20251024_153637-087195/w/w_999
+Saving result to results/example_jobs/results_20251024_153637-087195/...
+
+Training on experiment 4/10...
+0	Obj: 0.709,	F: 0.693,	Cf: nan,	Imb: 0.17,	Val: 0.693,	ValImb: 0.15,	ValObj: 0.71,	Acc: 84.71%
+100	Obj: 0.241,	F: 0.226,	Cf: nan,	Imb: 0.0048,	Val: 0.349,	ValImb: 0.043,	ValObj: 0.35,	Acc: 91.22%
+200	Obj: 0.197,	F: 0.197,	Cf: nan,	Imb: 0.013,	Val: 0.380,	ValImb: 0.013,	ValObj: 0.38,	Acc: 92.38%
+299	Obj: 0.169,	F: 0.185,	Cf: nan,	Imb: 0.0056,	Val: 0.443,	ValImb: 0.041,	ValObj: 0.44,	Acc: 93.05%
+results/example_jobs/results_20251024_153637-087195/w/w_999
+Saving result to results/example_jobs/results_20251024_153637-087195/...
+
+Training on experiment 5/10...
+0	Obj: 0.709,	F: 0.692,	Cf: nan,	Imb: 0.23,	Val: 0.692,	ValImb: 0.25,	ValObj: 0.71,	Acc: 84.27%
+100	Obj: 0.253,	F: 0.238,	Cf: nan,	Imb: 0.0068,	Val: 0.347,	ValImb: 0.11,	ValObj: 0.35,	Acc: 90.22%
+200	Obj: 0.273,	F: 0.285,	Cf: nan,	Imb: 0.0093,	Val: 0.394,	ValImb: 0.041,	ValObj: 0.40,	Acc: 88.99%
+299	Obj: 0.257,	F: 0.289,	Cf: nan,	Imb: 0.031,	Val: 0.585,	ValImb: 0.058,	ValObj: 0.59,	Acc: 89.66%
+results/example_jobs/results_20251024_153637-087195/w/w_999
+Saving result to results/example_jobs/results_20251024_153637-087195/...
+
+Training on experiment 6/10...
+0	Obj: 0.709,	F: 0.693,	Cf: nan,	Imb: 0.29,	Val: 0.693,	ValImb: 0.25,	ValObj: 0.70,	Acc: 85.16%
+100	Obj: 0.256,	F: 0.240,	Cf: nan,	Imb: 0.0053,	Val: 0.353,	ValImb: 0.0036,	ValObj: 0.35,	Acc: 89.88%
+200	Obj: 0.191,	F: 0.186,	Cf: nan,	Imb: 0.007,	Val: 0.419,	ValImb: 0.014,	ValObj: 0.42,	Acc: 92.38%
+299	Obj: 0.197,	F: 0.207,	Cf: nan,	Imb: 0.009,	Val: 0.520,	ValImb: 0.021,	ValObj: 0.52,	Acc: 90.72%
+results/example_jobs/results_20251024_153637-087195/w/w_999
+Saving result to results/example_jobs/results_20251024_153637-087195/...
+
+Training on experiment 7/10...
+0	Obj: 0.709,	F: 0.692,	Cf: nan,	Imb: 0.19,	Val: 0.692,	ValImb: 0.24,	ValObj: 0.70,	Acc: 84.82%
+100	Obj: 0.278,	F: 0.266,	Cf: nan,	Imb: 0.011,	Val: 0.291,	ValImb: 0.033,	ValObj: 0.29,	Acc: 89.55%
+200	Obj: 0.205,	F: 0.205,	Cf: nan,	Imb: 0.007,	Val: 0.341,	ValImb: 0.024,	ValObj: 0.34,	Acc: 92.44%
+299	Obj: 0.176,	F: 0.190,	Cf: nan,	Imb: 0.0074,	Val: 0.419,	ValImb: 0.022,	ValObj: 0.42,	Acc: 92.38%
+results/example_jobs/results_20251024_153637-087195/w/w_999
+Saving result to results/example_jobs/results_20251024_153637-087195/...
+
+Training on experiment 8/10...
+0	Obj: 0.710,	F: 0.692,	Cf: nan,	Imb: 0.35,	Val: 0.692,	ValImb: 0.27,	ValObj: 0.70,	Acc: 85.16%
+100	Obj: 0.239,	F: 0.219,	Cf: nan,	Imb: 0.038,	Val: 0.359,	ValImb: 0.03,	ValObj: 0.36,	Acc: 91.72%
+200	Obj: 0.222,	F: 0.220,	Cf: nan,	Imb: 0.012,	Val: 0.368,	ValImb: 0.012,	ValObj: 0.37,	Acc: 92.05%
+299	Obj: 0.182,	F: 0.192,	Cf: nan,	Imb: 0.0093,	Val: 0.405,	ValImb: 0.0082,	ValObj: 0.41,	Acc: 92.00%
+results/example_jobs/results_20251024_153637-087195/w/w_999
+Saving result to results/example_jobs/results_20251024_153637-087195/...
+
+Training on experiment 9/10...
+0	Obj: 0.710,	F: 0.692,	Cf: nan,	Imb: 0.15,	Val: 0.692,	ValImb: 0.17,	ValObj: 0.71,	Acc: 85.83%
+100	Obj: 0.247,	F: 0.231,	Cf: nan,	Imb: 0.017,	Val: 0.363,	ValImb: 0.037,	ValObj: 0.36,	Acc: 90.77%
+200	Obj: 0.205,	F: 0.203,	Cf: nan,	Imb: 0.027,	Val: 0.509,	ValImb: 0.03,	ValObj: 0.51,	Acc: 92.33%
+299	Obj: 0.169,	F: 0.178,	Cf: nan,	Imb: 0.0096,	Val: 0.439,	ValImb: 0.025,	ValObj: 0.44,	Acc: 93.11%
+results/example_jobs/results_20251024_153637-087195/w/w_999
+Saving result to results/example_jobs/results_20251024_153637-087195/...
+
+Training on experiment 10/10...
+0	Obj: 0.709,	F: 0.692,	Cf: nan,	Imb: 0.13,	Val: 0.692,	ValImb: 0.15,	ValObj: 0.70,	Acc: 84.66%
+100	Obj: 0.240,	F: 0.219,	Cf: nan,	Imb: 0.014,	Val: 0.384,	ValImb: 0.017,	ValObj: 0.39,	Acc: 90.99%
+200	Obj: 0.186,	F: 0.174,	Cf: nan,	Imb: 0.021,	Val: 0.438,	ValImb: 0.022,	ValObj: 0.44,	Acc: 92.94%
+299	Obj: 0.144,	F: 0.140,	Cf: nan,	Imb: 0.015,	Val: 0.553,	ValImb: 0.021,	ValObj: 0.55,	Acc: 94.50%
+results/example_jobs/results_20251024_153637-087195/w/w_999
+Saving result to results/example_jobs/results_20251024_153637-087195/...
+

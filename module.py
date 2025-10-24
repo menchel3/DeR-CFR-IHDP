@@ -202,10 +202,17 @@ class Net(object):
             g_ALoss = tf.reduce_mean(sample_weight*tf.abs(self.y_-g_A2y))
             c_pred_error = -tf.reduce_mean(tf.abs(self.y_-g_A2y))
         elif FLAGS.loss == 'log':
-            g_A2y = 0.995 / (1.0 + tf.exp(-g_A2y)) + 0.0025
-            c_res = self.y_ * tf.log(g_A2y) + (1.0 - self.y_) * tf.log(1.0 - g_A2y)
-            g_ALoss = -tf.reduce_mean(sample_weight * c_res)
-            c_pred_error = -tf.reduce_mean(c_res)
+            # Use DeR-CFR_0 style for adjustment network too
+            g_A2y_prob = 0.995 / (1.0 + tf.exp(-g_A2y)) + 0.0025
+            
+            labels_A = tf.concat((1.0 - self.y_, self.y_), axis=1)
+            logits_A = tf.concat((-g_A2y, g_A2y), axis=1)
+            
+            loss_A_per_sample = tf.nn.sigmoid_cross_entropy_with_logits(logits=logits_A, labels=labels_A)
+            loss_A_per_sample = tf.reduce_mean(loss_A_per_sample, axis=1, keepdims=True)
+            
+            g_ALoss = tf.reduce_mean(sample_weight * loss_A_per_sample)
+            c_pred_error = tf.reduce_mean(loss_A_per_sample)
         else:
             g_ALoss = tf.reduce_mean(sample_weight * tf.square(self.y_ - g_A2y))
             c_pred_error = tf.sqrt(tf.reduce_mean(tf.square(self.y_ - g_A2y)))
@@ -223,10 +230,20 @@ class Net(object):
             L_R = tf.reduce_mean(sample_weight*tf.abs(self.y_-y))
             pred_error = -tf.reduce_mean(tf.abs(self.y_-y))
         elif FLAGS.loss == 'log':
-            y = 0.995 / (1.0 + tf.exp(-y)) + 0.0025
-            res = self.y_ * tf.log(y) + (1.0 - self.y_) * tf.log(1.0 - y)
-            L_R = -tf.reduce_mean(sample_weight * res)
-            pred_error = -tf.reduce_mean(res)
+            # Use DeR-CFR_0 style: sigmoid with logits (more numerically stable)
+            y_prob = 0.995 / (1.0 + tf.exp(-y)) + 0.0025
+            
+            # Construct one-hot labels: [1-y, y]
+            labels = tf.concat((1.0 - self.y_, self.y_), axis=1)
+            # Construct logits: [logit_0, logit_1] where logit_1 = y (original), logit_0 = -y
+            logits = tf.concat((-y, y), axis=1)
+            
+            # Use sigmoid_cross_entropy (more stable than manual log)
+            loss_per_sample = tf.nn.sigmoid_cross_entropy_with_logits(logits=logits, labels=labels)
+            loss_per_sample = tf.reduce_mean(loss_per_sample, axis=1, keepdims=True)  # Average over 2 classes
+            
+            L_R = tf.reduce_mean(sample_weight * loss_per_sample)
+            pred_error = tf.reduce_mean(loss_per_sample)
         else:
             L_R = tf.reduce_mean(sample_weight * tf.square(self.y_ - y))
             pred_error = tf.sqrt(tf.reduce_mean(tf.square(self.y_ - y)))
@@ -268,13 +285,21 @@ class Net(object):
             self.projection = weights_in[0].assign(self.w_proj)
 
         if FLAGS.loss == 'log':
-            label = y
+            # For binary outcomes (Jobs/TWINS), output probability for causal inference
+            # Use sigmoid to convert logits to probabilities
+            y_prob = 0.995 / (1.0 + tf.exp(-y)) + 0.0025
+            self.output = y_prob  # Output probability [0, 1] for causal effect calculation
+            
+            # Also save discrete label for accuracy calculation
+            label = y_prob
             one = tf.ones_like(label)
             zero = tf.zeros_like(label)
-            label = tf.where(label < 0.5, x=zero, y=one)
-            self.output = label
+            label_discrete = tf.where(label < 0.5, x=zero, y=one)
+            self.output_discrete = label_discrete  # Discrete output {0, 1} for accuracy only
         else:
+            # For continuous outcomes (IHDP), output is the raw value
             self.output = y
+            self.output_discrete = y  # Same as output for continuous case
         self.tot1_loss = tot1_error
         self.tot_loss = tot_error
         self.val_loss = val_error

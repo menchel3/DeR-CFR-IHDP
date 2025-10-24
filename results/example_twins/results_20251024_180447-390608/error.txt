@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "main.py", line 459, in main
+    evaluate(eval_dir)
+  File "C:\Users\0702ty\OneDrive\Desktop\DRLECB\DeR-CFR-main\DeR-CFR-IHDP\evaluate.py", line 62, in evaluate
+    binary=binary,mode=mode, bin_or_cont=bin_or_cont)
+  File "C:\Users\0702ty\OneDrive\Desktop\DRLECB\DeR-CFR-main\DeR-CFR-IHDP\cfr_function\evaluation.py", line 495, in evaluate
+    validation=False, multiple_exps=multiple_exps, binary=binary, mode=mode, bin_or_cont = bin_or_cont)
+  File "C:\Users\0702ty\OneDrive\Desktop\DRLECB\DeR-CFR-main\DeR-CFR-IHDP\cfr_function\evaluation.py", line 411, in evaluate_result
+    data, i_exp, I_valid_rep, compute_policy_curve, nn_t=nn_t, nn_c=nn_c, bin_or_cont = bin_or_cont)
+  File "C:\Users\0702ty\OneDrive\Desktop\DRLECB\DeR-CFR-main\DeR-CFR-IHDP\cfr_function\evaluation.py", line 211, in evaluate_cont_ate
+    mu0 = data['mu0'][:,i_exp]
+TypeError: 'NoneType' object is not subscriptable

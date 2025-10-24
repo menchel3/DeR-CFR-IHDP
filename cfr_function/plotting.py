@@ -90,7 +90,15 @@ def table_str_bin(result_set, row_labels, labels_long=None, binary=False):
     s = head_str + '\n' + '-'*len(head_str) + '\n'
 
     for i in range(len(result_set)):
-        vals = [np.mean(np.abs(result_set[i][c])) for c in cols] # @TODO: np.abs just to make err not bias. change!
+        # For error metrics, take absolute value; for ATE/bias metrics, keep sign
+        vals = []
+        for c in cols:
+            if c in ['pehe', 'rmse_fact', 'rmse_cfact', 'rmse_ite', 'err_fact', 'objective', 'pehe_nn']:
+                # Error metrics: take absolute value
+                vals.append(np.mean(np.abs(result_set[i][c])))
+            else:
+                # ATE, bias, and other directional metrics: keep sign
+                vals.append(np.mean(result_set[i][c]))
         stds = [np.std(result_set[i][c])/np.sqrt(result_set[i][c].shape[0]) for c in cols]
         val_pad = [r1pad(row_labels[i])] + [rpad('%.3f +/- %.3f ' % (vals[j], stds[j])) for j in range(len(vals))]
         val_str = '| '.join(val_pad)

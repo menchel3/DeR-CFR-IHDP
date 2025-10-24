@@ -1,6 +1,7 @@
 import sys
 import os
 import json
+import numpy as np
 
 import pickle
 
@@ -8,7 +9,7 @@ from cfr_function.logger import Logger as Log
 Log.VERBOSE = True
 
 import cfr_function.evaluation as evaluation
-from cfr_function.plotting import *
+from cfr_function.plotting import plot_evaluation_cont, plot_evaluation_bin
 
 def sort_by_config(results, configs, key):
     vals = np.array([cfg[key] for cfg in configs])
@@ -38,9 +39,19 @@ def evaluate(output_dir='results/example_ihdp/', overwrite=True, filters=None, g
     if not os.path.isdir(output_dir):
         raise Exception('Could not find output at path: %s' % output_dir)
 
-    data_train = 'C:/Users/0702ty/OneDrive/Desktop/DRLECB/data/ihdp_npci_1-100.train.npz'
-    data_test = 'C:/Users/0702ty/OneDrive/Desktop/DRLECB/data/ihdp_npci_1-100.test.npz'
-    binary = False
+    # Auto-select dataset based on output_dir
+    if 'jobs' in output_dir.lower():
+        data_train = 'C:/Users/0702ty/OneDrive/Desktop/DRLECB/data/jobs_DW_bin.new.10.train.npz'
+        data_test = 'C:/Users/0702ty/OneDrive/Desktop/DRLECB/data/jobs_DW_bin.new.10.test.npz'
+        binary = True
+    elif 'twins' in output_dir.lower():
+        data_train = 'C:/Users/0702ty/OneDrive/Desktop/DRLECB/twins_1-10.train.npz'
+        data_test = 'C:/Users/0702ty/OneDrive/Desktop/DRLECB/twins_1-10.test.npz'
+        binary = False
+    else:
+        data_train = 'C:/Users/0702ty/OneDrive/Desktop/DRLECB/data/ihdp_npci_1-100.train.npz'
+        data_test = 'C:/Users/0702ty/OneDrive/Desktop/DRLECB/data/ihdp_npci_1-100.test.npz'
+        binary = False
 
     # Evaluate results
     eval_path = '%s/evaluation.npz' % output_dir
@@ -57,7 +68,14 @@ def evaluate(output_dir='results/example_ihdp/', overwrite=True, filters=None, g
         # Load evaluation
         eval_results, configs = pickle.load(open(eval_path, "rb"))
 
-    plot_evaluation_cont(eval_results, configs, output_dir, data_train, data_test, filters)
+    # Call correct plotting function based on dataset type
+    if binary:
+        # Jobs dataset: display policy_risk, bias_att, err_fact
+        plot_evaluation_bin(eval_results, configs, output_dir, data_train, data_test, filters)
+    else:
+        # IHDP/TWINS dataset: display pehe, bias_ate, etc.
+        plot_evaluation_cont(eval_results, configs, output_dir, data_train, data_test, filters)
+
 
 
 if __name__ == "__main__":

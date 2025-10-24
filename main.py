@@ -13,42 +13,42 @@ from utils import simplex_project, log, save_config, load_data, validation_split
 ''' Define parameter flags '''
 FLAGS = tf.app.flags.FLAGS
 # Hyper-parameter in Table 1
-tf.app.flags.DEFINE_integer('constrainedLayer', 1, """Number of layers with constraints applied.""")
-tf.app.flags.DEFINE_integer('batch_norm', 0, """Whether to use batch normalization. """)
+tf.app.flags.DEFINE_integer('constrainedLayer', 2, """Number of layers with constraints applied.""")
+tf.app.flags.DEFINE_integer('batch_norm', 1, """Whether to use batch normalization. """)
 tf.app.flags.DEFINE_string('normalization', 'divide', """How to normalize representation (after batch norm). none/bn_fixed/divide/project """)
-tf.app.flags.DEFINE_integer('n_in', 7, """Number of representation layers. """)
+tf.app.flags.DEFINE_integer('n_in', 5, """Number of representation layers. """)
 tf.app.flags.DEFINE_integer('n_out', 4, """Number of output layers. """)
 tf.app.flags.DEFINE_integer('n_t', 1, """Number of treatment layers. """)
 tf.app.flags.DEFINE_integer('dim_in', 32, """Pre-representation layer dimensions. """)
-tf.app.flags.DEFINE_integer('dim_out', 256, """Post-representation layer dimensions. """)
+tf.app.flags.DEFINE_integer('dim_out', 128, """Post-representation layer dimensions. """)
 tf.app.flags.DEFINE_float('p_coef_y', 1.0, """ Default 1: Outcome Regression - Loss FUN L_R in Eq.(8). """)
-tf.app.flags.DEFINE_float('p_coef_alpha', 5, """ Hyper-parameter alpha: Decompose Adjustments - Loss FUN L_A in Eq. (3). """)
-tf.app.flags.DEFINE_float('p_coef_beta', 10, """ Hyper-parameter beta: Decompose Instruments - Loss FUN L_I in Eq. (5). """)
+tf.app.flags.DEFINE_float('p_coef_alpha', 1e-2, """ Hyper-parameter alpha: Decompose Adjustments - Loss FUN L_A in Eq. (3). """)
+tf.app.flags.DEFINE_float('p_coef_beta', 1, """ Hyper-parameter beta: Decompose Instruments - Loss FUN L_I in Eq. (5). """)
 tf.app.flags.DEFINE_float('p_coef_gamma', 1e-2, """ Hyper-parameter gamma: Balancing Confounders - Loss FUN L_C_B in Eq. (4). """)
-tf.app.flags.DEFINE_float('p_coef_mu', 10, """  Hyper-parameter mu: Deep Orthogonal Regularizer - Loss FUN L_O in Eq. (7). """)
-tf.app.flags.DEFINE_float('p_coef_lambda', 1e-2, """ Hyper-parameter lambda: Regularization - Loss FUN Reg in Eq. (14). """)
+tf.app.flags.DEFINE_float('p_coef_mu', 5, """  Hyper-parameter mu: Deep Orthogonal Regularizer - Loss FUN L_O in Eq. (7). """)
+tf.app.flags.DEFINE_float('p_coef_lambda', 1e-3, """ Hyper-parameter lambda: Regularization - Loss FUN Reg in Eq. (14). """)
 # Training Configurations
 tf.app.flags.DEFINE_integer('seed', 1, """Random Seed. """)
-tf.app.flags.DEFINE_integer('experiments', 100, """Number of experiments. """)
+tf.app.flags.DEFINE_integer('experiments', 10, """Number of experiments. """)
 tf.app.flags.DEFINE_integer('iterations', 300, """Number of iterations. """)
-tf.app.flags.DEFINE_integer('batch_size', 0, """Batch size. """)
+tf.app.flags.DEFINE_integer('batch_size', 128, """Batch size. """)
 tf.app.flags.DEFINE_float('lrate', 1e-3, """Learning rate. """)
 tf.app.flags.DEFINE_float('dropout_in', 1.0, """Input layers dropout keep rate. """)
 tf.app.flags.DEFINE_float('dropout_out', 1.0, """Output layers dropout keep rate. """)
 tf.app.flags.DEFINE_string('nonlin', 'elu', """Kind of non-linearity. Default relu. """)
 tf.app.flags.DEFINE_string('optimizer', 'Adam', """Which optimizer to use. (RMSProp/Adagrad/GradientDescent/Adam)""")
 tf.app.flags.DEFINE_string('imb_fun', 'mmd_lin', """Which imbalance penalty to use (mmd_lin/mmd_rbf/mmd2_lin/mmd2_rbf/lindisc/wass). """)
-tf.app.flags.DEFINE_string('loss', 'l2', """Type of loss function to use: 'log' for binary outcomes, 'l1' or 'l2' for continuous outcomes.""")
+tf.app.flags.DEFINE_string('loss', 'log', """Type of loss function to use: 'log' for binary outcomes, 'l1' or 'l2' for continuous outcomes.""")
 tf.app.flags.DEFINE_float('val_part', 0.3, """Validation part. """)
 tf.app.flags.DEFINE_integer('ycf_result', 1, """The exits of ycf. """)
 # DataLoader and Logging Configurations
 tf.app.flags.DEFINE_integer('output_delay', 100, """Number of iterations between log/loss outputs. """)
 tf.app.flags.DEFINE_integer('pred_output_delay', 30, """Number of iterations between prediction outputs. (-1 gives no intermediate output). """)
 tf.app.flags.DEFINE_integer('output_csv',0,"""Whether to save a CSV file with the results""")
-tf.app.flags.DEFINE_string('outdir', 'results/example_ihdp/', """Output directory. """)
+tf.app.flags.DEFINE_string('outdir', 'results/example_jobs/', """Output directory. """)
 tf.app.flags.DEFINE_string('datadir', 'C:/Users/0702ty/OneDrive/Desktop/DRLECB/data/', """Data directory. """)
-tf.app.flags.DEFINE_string('dataform', 'ihdp_npci_1-100.train.npz', """Training data filename form. """)
-tf.app.flags.DEFINE_string('data_test', 'ihdp_npci_1-100.test.npz', """Test data filename form. """)
+tf.app.flags.DEFINE_string('dataform', 'jobs_DW_bin.new.10.train.npz', """Training data filename form. """)
+tf.app.flags.DEFINE_string('data_test', 'jobs_DW_bin.new.10.test.npz', """Test data filename form. """)
 tf.app.flags.DEFINE_integer('save_rep', 0, """Save representations after training. """)
 # Optional Configurations
 tf.app.flags.DEFINE_integer('use_p_correction', 0, """Whether to use population size p(t) in mmd/disc/wass.""")
@@ -180,16 +180,18 @@ def train(CFR, sess, train_first, train_second, D, I_valid, D_test, logfile, i_e
                         % (obj_loss, f_error, cf_error, imb_err, valid_f_error, valid_imb, valid_obj)
 
             if FLAGS.loss == 'log':
-                y_pred = sess.run(CFR.output, feed_dict={CFR.I: Im, CFR.x: x_batch, \
+                # Use discrete output for accuracy calculation
+                y_pred_discrete = sess.run(CFR.output_discrete, feed_dict={CFR.I: Im, CFR.x: x_batch, \
                     CFR.t: t_batch, CFR.y_: y_batch, CFR.do_in: 1.0, CFR.do_out: 1.0, CFR.y_0_median: yff_0_median, CFR.y_1_median: yff_1_median})
-                y_pred = 1.0*(y_pred > 0.5)
-                acc = 100 * (1 - np.mean(np.abs(y_batch - y_pred)))
+                y_pred_discrete = 1.0*(y_pred_discrete > 0.5)
+                acc = 100 * (1 - np.mean(np.abs(y_batch - y_pred_discrete)))
                 loss_str += ',\tAcc: %.2f%%' % acc
                 if FLAGS.ycf_result == 1:
-                    yc_pred = sess.run(CFR.output, feed_dict={CFR.I: Im, CFR.x: x_batch, \
+                    # Use discrete output for counterfactual accuracy calculation
+                    yc_pred_discrete = sess.run(CFR.output_discrete, feed_dict={CFR.I: Im, CFR.x: x_batch, \
                                                               CFR.t: 1 - t_batch, CFR.y_: yc_batch, CFR.do_in: 1.0, CFR.do_out: 1.0, CFR.y_0_median: yff_0_median, CFR.y_1_median: yff_1_median})
-                    yc_pred = 1.0 * (yc_pred > 0.5)
-                    cacc = 100 * (1 - np.mean(np.abs(yc_batch - yc_pred)))
+                    yc_pred_discrete = 1.0 * (yc_pred_discrete > 0.5)
+                    cacc = 100 * (1 - np.mean(np.abs(yc_batch - yc_pred_discrete)))
                     loss_str += ',\tcAcc: %.2f%%' % cacc
 
             log(logfile, loss_str)
@@ -453,7 +455,10 @@ def main(argv=None):  # pylint: disable=unused-argument
 
     try:
         run(outdir)
-        evaluate('results/example_ihdp/')
+        # 根据outdir自动选择评估目录
+        eval_dir = FLAGS.outdir
+        print(f'\n开始评估实验结果: {eval_dir}')
+        evaluate(eval_dir)
     except Exception as e:
         with open(outdir+'error.txt','w') as errfile:
             errfile.write(''.join(traceback.format_exception(*sys.exc_info())))
