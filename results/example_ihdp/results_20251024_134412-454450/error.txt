@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "main.py", line 454, in main
+    evaluate('results/example_ihdp/')
+  File "C:\Users\0702ty\OneDrive\Desktop\DRLECB\DeR-CFR-main\DeR-CFR-IHDP\evaluate.py", line 60, in evaluate
+    plot_evaluation_cont(eval_results, configs, output_dir, data_train, data_test, filters)
+  File "C:\Users\0702ty\OneDrive\Desktop\DRLECB\DeR-CFR-main\DeR-CFR-IHDP\cfr_function\plotting.py", line 243, in plot_evaluation_cont
+    CONFIG_CHOICE_SET_CONT, CONFIG_CRITERION_CONT)
+  File "C:\Users\0702ty\OneDrive\Desktop\DRLECB\DeR-CFR-main\DeR-CFR-IHDP\cfr_function\plotting.py", line 124, in select_parameters
+    n_exp = results[stop_set][stop_criterion].shape[1]
+IndexError: tuple index out of range
