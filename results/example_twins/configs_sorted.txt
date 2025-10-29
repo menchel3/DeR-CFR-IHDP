@@ -5,3 +5,4 @@ lrate=0.001
 lrate=0.005
 lrate=0.001
 lrate=0.001
+lrate=0.001

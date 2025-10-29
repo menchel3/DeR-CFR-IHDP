@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "main.py", line 457, in main
+    run(outdir)
+  File "main.py", line 348, in run
+    train_second = second_opt.minimize(CFR.tot_loss, global_step=second_step,var_list=W_vars)
+  File "C:\tool\Anaconda3\envs\DeR_CFR_tf1\lib\site-packages\tensorflow_core\python\training\optimizer.py", line 403, in minimize
+    grad_loss=grad_loss)
+  File "C:\tool\Anaconda3\envs\DeR_CFR_tf1\lib\site-packages\tensorflow_core\python\training\optimizer.py", line 506, in compute_gradients
+    raise ValueError("No variables to optimize.")
+ValueError: No variables to optimize.

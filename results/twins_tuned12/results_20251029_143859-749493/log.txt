@@ -1,0 +1,136 @@
+Training with hyperparameters: p_coef_y=50, p_coef_alpha=0.01, p_coef_beta=0.001, p_coef_gamma=0.0001, p_coef_mu=0.1, p_coef_lambda=0.1. 
+Training data: C:/Users/0702ty/OneDrive/Desktop/DRLECB/twins_1-10.train.npz
+Test data:     C:/Users/0702ty/OneDrive/Desktop/DRLECB/twins_1-10.test.npz
+Loaded data with shape [40]
+Defining graph...
+
+Training on experiment 1/10...
+0	Obj: 35.275,	F: 0.692,	Cf: 0.692,	Imb: 0.18,	Val: 0.692,	ValImb: 0.21,	ValObj: 0.70,	Acc: 83.16%,	cAcc: 84.27%
+50	Obj: 14.238,	F: 0.291,	Cf: 0.278,	Imb: 0.19,	Val: 0.345,	ValImb: 0.19,	ValObj: 0.35,	Acc: 88.17%,	cAcc: 88.03%
+100	Obj: 10.497,	F: 0.235,	Cf: 0.275,	Imb: 0.11,	Val: 0.382,	ValImb: 0.12,	ValObj: 0.38,	Acc: 91.52%,	cAcc: 88.44%
+150	Obj: 7.876,	F: 0.191,	Cf: 0.305,	Imb: 0.1,	Val: 0.473,	ValImb: 0.14,	ValObj: 0.47,	Acc: 93.72%,	cAcc: 87.85%
+200	Obj: 5.535,	F: 0.143,	Cf: 0.361,	Imb: 0.08,	Val: 0.566,	ValImb: 0.11,	ValObj: 0.57,	Acc: 95.72%,	cAcc: 87.91%
+250	Obj: 4.777,	F: 0.142,	Cf: 0.381,	Imb: 0.12,	Val: 0.572,	ValImb: 0.16,	ValObj: 0.57,	Acc: 96.04%,	cAcc: 87.44%
+300	Obj: 4.892,	F: 0.173,	Cf: 0.330,	Imb: 0.13,	Val: 0.492,	ValImb: 0.14,	ValObj: 0.49,	Acc: 94.78%,	cAcc: 87.73%
+350	Obj: 2.491,	F: 0.100,	Cf: 0.426,	Imb: 0.078,	Val: 0.733,	ValImb: 0.1,	ValObj: 0.73,	Acc: 97.62%,	cAcc: 87.85%
+399	Obj: 1.771,	F: 0.087,	Cf: 0.473,	Imb: 0.042,	Val: 0.897,	ValImb: 0.073,	ValObj: 0.90,	Acc: 98.27%,	cAcc: 87.94%
+results/twins_tuned12/results_20251029_143859-749493/w/w_999
+Saving result to results/twins_tuned12/results_20251029_143859-749493/...
+
+Training on experiment 2/10...
+0	Obj: 35.280,	F: 0.692,	Cf: 0.692,	Imb: 0.22,	Val: 0.692,	ValImb: 0.22,	ValObj: 0.70,	Acc: 82.31%,	cAcc: 84.92%
+50	Obj: 14.364,	F: 0.292,	Cf: 0.284,	Imb: 0.067,	Val: 0.339,	ValImb: 0.064,	ValObj: 0.34,	Acc: 87.91%,	cAcc: 87.65%
+100	Obj: 11.808,	F: 0.262,	Cf: 0.291,	Imb: 0.083,	Val: 0.408,	ValImb: 0.078,	ValObj: 0.41,	Acc: 89.58%,	cAcc: 87.94%
+150	Obj: 6.859,	F: 0.156,	Cf: 0.323,	Imb: 0.039,	Val: 0.505,	ValImb: 0.024,	ValObj: 0.51,	Acc: 94.98%,	cAcc: 88.20%
+200	Obj: 6.841,	F: 0.159,	Cf: 0.421,	Imb: 0.058,	Val: 0.672,	ValImb: 0.049,	ValObj: 0.67,	Acc: 94.63%,	cAcc: 86.88%
+250	Obj: 29.707,	F: 0.765,	Cf: 0.833,	Imb: 0.17,	Val: 1.080,	ValImb: 0.15,	ValObj: 1.08,	Acc: 82.45%,	cAcc: 80.37%
+300	Obj: 7.281,	F: 0.238,	Cf: 0.299,	Imb: 0.1,	Val: 0.411,	ValImb: 0.1,	ValObj: 0.41,	Acc: 91.73%,	cAcc: 88.76%
+350	Obj: 3.598,	F: 0.127,	Cf: 0.397,	Imb: 0.044,	Val: 0.632,	ValImb: 0.048,	ValObj: 0.63,	Acc: 96.98%,	cAcc: 87.76%
+399	Obj: 2.370,	F: 0.097,	Cf: 0.458,	Imb: 0.034,	Val: 0.743,	ValImb: 0.04,	ValObj: 0.74,	Acc: 98.12%,	cAcc: 87.85%
+results/twins_tuned12/results_20251029_143859-749493/w/w_999
+Saving result to results/twins_tuned12/results_20251029_143859-749493/...
+
+Training on experiment 3/10...
+0	Obj: 35.280,	F: 0.692,	Cf: 0.692,	Imb: 0.22,	Val: 0.692,	ValImb: 0.24,	ValObj: 0.70,	Acc: 82.81%,	cAcc: 84.45%
+50	Obj: 14.653,	F: 0.302,	Cf: 0.287,	Imb: 0.06,	Val: 0.319,	ValImb: 0.084,	ValObj: 0.32,	Acc: 88.32%,	cAcc: 87.59%
+100	Obj: 11.308,	F: 0.255,	Cf: 0.277,	Imb: 0.035,	Val: 0.354,	ValImb: 0.045,	ValObj: 0.35,	Acc: 90.26%,	cAcc: 88.85%
+150	Obj: 8.321,	F: 0.205,	Cf: 0.284,	Imb: 0.046,	Val: 0.405,	ValImb: 0.041,	ValObj: 0.41,	Acc: 93.05%,	cAcc: 89.08%
+200	Obj: 6.107,	F: 0.164,	Cf: 0.297,	Imb: 0.05,	Val: 0.480,	ValImb: 0.041,	ValObj: 0.48,	Acc: 94.75%,	cAcc: 89.20%
+250	Obj: 6.341,	F: 0.203,	Cf: 0.290,	Imb: 0.091,	Val: 0.431,	ValImb: 0.11,	ValObj: 0.43,	Acc: 93.13%,	cAcc: 89.35%
+300	Obj: 7.147,	F: 0.257,	Cf: 0.319,	Imb: 0.089,	Val: 0.420,	ValImb: 0.11,	ValObj: 0.42,	Acc: 90.29%,	cAcc: 87.76%
+350	Obj: 2.882,	F: 0.137,	Cf: 0.345,	Imb: 0.048,	Val: 0.659,	ValImb: 0.056,	ValObj: 0.66,	Acc: 96.74%,	cAcc: 89.35%
+399	Obj: 1.800,	F: 0.121,	Cf: 0.388,	Imb: 0.041,	Val: 0.832,	ValImb: 0.047,	ValObj: 0.83,	Acc: 97.83%,	cAcc: 90.05%
+results/twins_tuned12/results_20251029_143859-749493/w/w_999
+Saving result to results/twins_tuned12/results_20251029_143859-749493/...
+
+Training on experiment 4/10...
+0	Obj: 35.281,	F: 0.692,	Cf: 0.692,	Imb: 0.2,	Val: 0.692,	ValImb: 0.26,	ValObj: 0.70,	Acc: 82.95%,	cAcc: 84.36%
+50	Obj: 14.332,	F: 0.293,	Cf: 0.302,	Imb: 0.096,	Val: 0.337,	ValImb: 0.11,	ValObj: 0.34,	Acc: 87.94%,	cAcc: 86.38%
+100	Obj: 10.115,	F: 0.222,	Cf: 0.311,	Imb: 0.091,	Val: 0.392,	ValImb: 0.072,	ValObj: 0.39,	Acc: 92.37%,	cAcc: 86.62%
+150	Obj: 7.095,	F: 0.164,	Cf: 0.383,	Imb: 0.085,	Val: 0.472,	ValImb: 0.056,	ValObj: 0.47,	Acc: 94.78%,	cAcc: 85.74%
+200	Obj: 4.844,	F: 0.113,	Cf: 0.444,	Imb: 0.081,	Val: 0.594,	ValImb: 0.051,	ValObj: 0.59,	Acc: 96.95%,	cAcc: 85.30%
+250	Obj: 3.885,	F: 0.100,	Cf: 0.491,	Imb: 0.077,	Val: 0.645,	ValImb: 0.053,	ValObj: 0.65,	Acc: 97.42%,	cAcc: 84.83%
+300	Obj: 8.220,	F: 0.237,	Cf: 0.441,	Imb: 0.042,	Val: 0.519,	ValImb: 0.027,	ValObj: 0.52,	Acc: 91.29%,	cAcc: 85.62%
+350	Obj: 2.755,	F: 0.095,	Cf: 0.531,	Imb: 0.071,	Val: 0.723,	ValImb: 0.043,	ValObj: 0.72,	Acc: 97.59%,	cAcc: 84.42%
+399	Obj: 1.879,	F: 0.073,	Cf: 0.549,	Imb: 0.054,	Val: 0.808,	ValImb: 0.033,	ValObj: 0.81,	Acc: 98.42%,	cAcc: 84.89%
+results/twins_tuned12/results_20251029_143859-749493/w/w_999
+Saving result to results/twins_tuned12/results_20251029_143859-749493/...
+
+Training on experiment 5/10...
+0	Obj: 35.278,	F: 0.692,	Cf: 0.692,	Imb: 0.25,	Val: 0.692,	ValImb: 0.27,	ValObj: 0.70,	Acc: 82.63%,	cAcc: 84.24%
+50	Obj: 13.608,	F: 0.275,	Cf: 0.290,	Imb: 0.012,	Val: 0.346,	ValImb: 0.031,	ValObj: 0.35,	Acc: 88.44%,	cAcc: 87.53%
+100	Obj: 10.721,	F: 0.232,	Cf: 0.311,	Imb: 0.012,	Val: 0.446,	ValImb: 0.018,	ValObj: 0.45,	Acc: 91.02%,	cAcc: 88.26%
+150	Obj: 7.653,	F: 0.176,	Cf: 0.305,	Imb: 0.029,	Val: 0.460,	ValImb: 0.038,	ValObj: 0.46,	Acc: 93.81%,	cAcc: 87.97%
+200	Obj: 4.714,	F: 0.107,	Cf: 0.388,	Imb: 0.013,	Val: 0.716,	ValImb: 0.011,	ValObj: 0.72,	Acc: 97.10%,	cAcc: 87.41%
+250	Obj: 7.363,	F: 0.208,	Cf: 0.325,	Imb: 0.017,	Val: 0.422,	ValImb: 0.031,	ValObj: 0.42,	Acc: 91.78%,	cAcc: 87.32%
+300	Obj: 3.286,	F: 0.091,	Cf: 0.400,	Imb: 0.0064,	Val: 0.786,	ValImb: 0.0098,	ValObj: 0.79,	Acc: 97.92%,	cAcc: 88.17%
+350	Obj: 2.576,	F: 0.079,	Cf: 0.433,	Imb: 0.016,	Val: 0.855,	ValImb: 0.017,	ValObj: 0.85,	Acc: 98.15%,	cAcc: 87.97%
+399	Obj: 1.894,	F: 0.060,	Cf: 0.447,	Imb: 0.018,	Val: 0.939,	ValImb: 0.016,	ValObj: 0.94,	Acc: 98.86%,	cAcc: 88.67%
+results/twins_tuned12/results_20251029_143859-749493/w/w_999
+Saving result to results/twins_tuned12/results_20251029_143859-749493/...
+
+Training on experiment 6/10...
+0	Obj: 35.276,	F: 0.692,	Cf: 0.692,	Imb: 0.18,	Val: 0.692,	ValImb: 0.22,	ValObj: 0.70,	Acc: 82.60%,	cAcc: 83.71%
+50	Obj: 14.033,	F: 0.288,	Cf: 0.291,	Imb: 0.041,	Val: 0.321,	ValImb: 0.061,	ValObj: 0.32,	Acc: 88.41%,	cAcc: 87.65%
+100	Obj: 10.604,	F: 0.239,	Cf: 0.298,	Imb: 0.031,	Val: 0.367,	ValImb: 0.051,	ValObj: 0.37,	Acc: 91.17%,	cAcc: 88.59%
+150	Obj: 8.242,	F: 0.201,	Cf: 0.322,	Imb: 0.035,	Val: 0.459,	ValImb: 0.066,	ValObj: 0.46,	Acc: 92.81%,	cAcc: 88.35%
+200	Obj: 6.708,	F: 0.185,	Cf: 0.329,	Imb: 0.038,	Val: 0.487,	ValImb: 0.062,	ValObj: 0.49,	Acc: 93.46%,	cAcc: 88.88%
+250	Obj: 4.403,	F: 0.129,	Cf: 0.377,	Imb: 0.028,	Val: 0.656,	ValImb: 0.051,	ValObj: 0.66,	Acc: 95.63%,	cAcc: 87.68%
+300	Obj: 9.927,	F: 0.304,	Cf: 0.337,	Imb: 0.04,	Val: 0.372,	ValImb: 0.043,	ValObj: 0.37,	Acc: 87.71%,	cAcc: 86.65%
+350	Obj: 4.923,	F: 0.218,	Cf: 0.350,	Imb: 0.015,	Val: 0.496,	ValImb: 0.033,	ValObj: 0.50,	Acc: 93.28%,	cAcc: 88.88%
+399	Obj: 2.570,	F: 0.180,	Cf: 0.412,	Imb: 0.014,	Val: 0.698,	ValImb: 0.031,	ValObj: 0.70,	Acc: 95.72%,	cAcc: 89.20%
+results/twins_tuned12/results_20251029_143859-749493/w/w_999
+Saving result to results/twins_tuned12/results_20251029_143859-749493/...
+
+Training on experiment 7/10...
+0	Obj: 35.277,	F: 0.692,	Cf: 0.692,	Imb: 0.21,	Val: 0.692,	ValImb: 0.19,	ValObj: 0.70,	Acc: 83.13%,	cAcc: 84.13%
+50	Obj: 14.579,	F: 0.296,	Cf: 0.281,	Imb: 0.22,	Val: 0.334,	ValImb: 0.19,	ValObj: 0.34,	Acc: 87.79%,	cAcc: 88.35%
+100	Obj: 10.489,	F: 0.231,	Cf: 0.280,	Imb: 0.17,	Val: 0.404,	ValImb: 0.13,	ValObj: 0.40,	Acc: 91.52%,	cAcc: 89.50%
+150	Obj: 7.069,	F: 0.161,	Cf: 0.299,	Imb: 0.16,	Val: 0.496,	ValImb: 0.12,	ValObj: 0.50,	Acc: 94.22%,	cAcc: 89.64%
+200	Obj: 7.615,	F: 0.191,	Cf: 0.304,	Imb: 0.092,	Val: 0.471,	ValImb: 0.069,	ValObj: 0.47,	Acc: 93.25%,	cAcc: 88.67%
+250	Obj: 3.086,	F: 0.062,	Cf: 0.414,	Imb: 0.07,	Val: 0.775,	ValImb: 0.029,	ValObj: 0.78,	Acc: 98.68%,	cAcc: 88.20%
+300	Obj: 4.975,	F: 0.153,	Cf: 0.368,	Imb: 0.21,	Val: 0.598,	ValImb: 0.2,	ValObj: 0.60,	Acc: 95.45%,	cAcc: 88.12%
+350	Obj: 2.672,	F: 0.082,	Cf: 0.447,	Imb: 0.16,	Val: 0.848,	ValImb: 0.13,	ValObj: 0.85,	Acc: 98.21%,	cAcc: 88.09%
+399	Obj: 1.902,	F: 0.062,	Cf: 0.476,	Imb: 0.11,	Val: 0.890,	ValImb: 0.077,	ValObj: 0.89,	Acc: 98.86%,	cAcc: 87.94%
+results/twins_tuned12/results_20251029_143859-749493/w/w_999
+Saving result to results/twins_tuned12/results_20251029_143859-749493/...
+
+Training on experiment 8/10...
+0	Obj: 35.276,	F: 0.692,	Cf: 0.692,	Imb: 0.21,	Val: 0.692,	ValImb: 0.18,	ValObj: 0.69,	Acc: 83.39%,	cAcc: 84.21%
+50	Obj: 13.588,	F: 0.276,	Cf: 0.299,	Imb: 0.029,	Val: 0.321,	ValImb: 0.031,	ValObj: 0.32,	Acc: 89.06%,	cAcc: 87.29%
+100	Obj: 10.017,	F: 0.221,	Cf: 0.325,	Imb: 0.027,	Val: 0.375,	ValImb: 0.035,	ValObj: 0.38,	Acc: 92.02%,	cAcc: 87.41%
+150	Obj: 6.829,	F: 0.158,	Cf: 0.371,	Imb: 0.021,	Val: 0.474,	ValImb: 0.024,	ValObj: 0.47,	Acc: 94.95%,	cAcc: 87.09%
+200	Obj: 6.106,	F: 0.159,	Cf: 0.366,	Imb: 0.023,	Val: 0.461,	ValImb: 0.025,	ValObj: 0.46,	Acc: 94.89%,	cAcc: 87.38%
+250	Obj: 4.061,	F: 0.111,	Cf: 0.417,	Imb: 0.032,	Val: 0.558,	ValImb: 0.033,	ValObj: 0.56,	Acc: 96.95%,	cAcc: 87.50%
+300	Obj: 8.218,	F: 0.270,	Cf: 0.315,	Imb: 0.09,	Val: 0.340,	ValImb: 0.085,	ValObj: 0.34,	Acc: 89.61%,	cAcc: 87.73%
+350	Obj: 4.671,	F: 0.207,	Cf: 0.375,	Imb: 0.049,	Val: 0.440,	ValImb: 0.047,	ValObj: 0.44,	Acc: 93.54%,	cAcc: 87.32%
+399	Obj: 2.730,	F: 0.170,	Cf: 0.443,	Imb: 0.04,	Val: 0.581,	ValImb: 0.036,	ValObj: 0.58,	Acc: 95.83%,	cAcc: 87.24%
+results/twins_tuned12/results_20251029_143859-749493/w/w_999
+Saving result to results/twins_tuned12/results_20251029_143859-749493/...
+
+Training on experiment 9/10...
+0	Obj: 35.277,	F: 0.692,	Cf: 0.692,	Imb: 0.25,	Val: 0.692,	ValImb: 0.28,	ValObj: 0.70,	Acc: 82.75%,	cAcc: 84.01%
+50	Obj: 13.896,	F: 0.282,	Cf: 0.294,	Imb: 0.069,	Val: 0.320,	ValImb: 0.054,	ValObj: 0.32,	Acc: 88.91%,	cAcc: 87.65%
+100	Obj: 10.511,	F: 0.232,	Cf: 0.298,	Imb: 0.033,	Val: 0.358,	ValImb: 0.021,	ValObj: 0.36,	Acc: 92.14%,	cAcc: 88.20%
+150	Obj: 8.203,	F: 0.197,	Cf: 0.341,	Imb: 0.061,	Val: 0.401,	ValImb: 0.05,	ValObj: 0.40,	Acc: 92.99%,	cAcc: 87.18%
+200	Obj: 4.584,	F: 0.100,	Cf: 0.474,	Imb: 0.059,	Val: 0.578,	ValImb: 0.047,	ValObj: 0.58,	Acc: 97.21%,	cAcc: 86.06%
+250	Obj: 3.316,	F: 0.069,	Cf: 0.547,	Imb: 0.043,	Val: 0.710,	ValImb: 0.034,	ValObj: 0.71,	Acc: 98.33%,	cAcc: 85.56%
+300	Obj: 5.554,	F: 0.180,	Cf: 0.372,	Imb: 0.083,	Val: 0.476,	ValImb: 0.067,	ValObj: 0.48,	Acc: 93.78%,	cAcc: 86.41%
+350	Obj: 2.497,	F: 0.066,	Cf: 0.575,	Imb: 0.06,	Val: 0.810,	ValImb: 0.048,	ValObj: 0.81,	Acc: 98.50%,	cAcc: 85.68%
+399	Obj: 1.899,	F: 0.048,	Cf: 0.588,	Imb: 0.055,	Val: 0.873,	ValImb: 0.046,	ValObj: 0.87,	Acc: 99.15%,	cAcc: 85.74%
+results/twins_tuned12/results_20251029_143859-749493/w/w_999
+Saving result to results/twins_tuned12/results_20251029_143859-749493/...
+
+Training on experiment 10/10...
+0	Obj: 35.276,	F: 0.692,	Cf: 0.692,	Imb: 0.22,	Val: 0.692,	ValImb: 0.21,	ValObj: 0.70,	Acc: 83.16%,	cAcc: 85.15%
+50	Obj: 14.137,	F: 0.287,	Cf: 0.294,	Imb: 0.03,	Val: 0.322,	ValImb: 0.028,	ValObj: 0.32,	Acc: 87.91%,	cAcc: 87.00%
+100	Obj: 10.149,	F: 0.223,	Cf: 0.306,	Imb: 0.02,	Val: 0.367,	ValImb: 0.018,	ValObj: 0.37,	Acc: 90.99%,	cAcc: 87.44%
+150	Obj: 6.878,	F: 0.158,	Cf: 0.336,	Imb: 0.027,	Val: 0.466,	ValImb: 0.032,	ValObj: 0.47,	Acc: 94.81%,	cAcc: 87.27%
+200	Obj: 5.040,	F: 0.115,	Cf: 0.370,	Imb: 0.037,	Val: 0.578,	ValImb: 0.032,	ValObj: 0.58,	Acc: 96.10%,	cAcc: 86.62%
+250	Obj: 4.935,	F: 0.123,	Cf: 0.408,	Imb: 0.04,	Val: 0.685,	ValImb: 0.028,	ValObj: 0.69,	Acc: 95.89%,	cAcc: 87.24%
+300	Obj: 3.745,	F: 0.117,	Cf: 0.356,	Imb: 0.034,	Val: 0.598,	ValImb: 0.033,	ValObj: 0.60,	Acc: 96.30%,	cAcc: 87.94%
+350	Obj: 2.317,	F: 0.071,	Cf: 0.409,	Imb: 0.011,	Val: 0.725,	ValImb: 0.008,	ValObj: 0.73,	Acc: 98.33%,	cAcc: 87.88%
+399	Obj: 1.756,	F: 0.059,	Cf: 0.424,	Imb: 0.0083,	Val: 0.778,	ValImb: 0.0045,	ValObj: 0.78,	Acc: 98.83%,	cAcc: 88.50%
+results/twins_tuned12/results_20251029_143859-749493/w/w_999
+Saving result to results/twins_tuned12/results_20251029_143859-749493/...
+

@@ -1,0 +1,116 @@
+Training with hyperparameters: p_coef_y=58, p_coef_alpha=0.01, p_coef_beta=0.001, p_coef_gamma=5e-05, p_coef_mu=0.08, p_coef_lambda=0.08. 
+Training data: C:/Users/0702ty/OneDrive/Desktop/DRLECB/twins_1-10.train.npz
+Test data:     C:/Users/0702ty/OneDrive/Desktop/DRLECB/twins_1-10.test.npz
+Loaded data with shape [40]
+Defining graph...
+
+Training on experiment 1/10...
+0	Obj: 40.291,	F: 0.691,	Cf: 0.691,	Imb: 0.34,	Val: 0.691,	ValImb: 0.36,	ValObj: 0.69,	Acc: 83.16%,	cAcc: 84.27%
+50	Obj: 13.956,	F: 0.398,	Cf: 0.444,	Imb: 0.058,	Val: 0.418,	ValImb: 0.067,	ValObj: 0.42,	Acc: 83.16%,	cAcc: 84.27%
+100	Obj: 1.838,	F: 0.400,	Cf: 0.359,	Imb: 0.015,	Val: 0.526,	ValImb: 0.016,	ValObj: 0.53,	Acc: 88.64%,	cAcc: 88.44%
+150	Obj: 1.086,	F: 0.480,	Cf: 0.410,	Imb: 0.02,	Val: 0.642,	ValImb: 0.013,	ValObj: 0.64,	Acc: 88.82%,	cAcc: 88.91%
+200	Obj: 0.983,	F: 0.503,	Cf: 0.414,	Imb: 0.011,	Val: 0.658,	ValImb: 0.004,	ValObj: 0.66,	Acc: 88.70%,	cAcc: 88.64%
+250	Obj: 0.922,	F: 0.497,	Cf: 0.390,	Imb: 0.01,	Val: 0.649,	ValImb: 0.0061,	ValObj: 0.65,	Acc: 88.79%,	cAcc: 88.70%
+299	Obj: 0.666,	F: 0.597,	Cf: 0.825,	Imb: 0.0045,	Val: 0.774,	ValImb: 0.0058,	ValObj: 0.77,	Acc: 88.32%,	cAcc: 85.27%
+results/twins_aggressive/results_20251028_135204-156830/w/w_999
+Saving result to results/twins_aggressive/results_20251028_135204-156830/...
+
+Training on experiment 2/10...
+0	Obj: 40.286,	F: 0.691,	Cf: 0.690,	Imb: 0.31,	Val: 0.690,	ValImb: 0.32,	ValObj: 0.69,	Acc: 82.31%,	cAcc: 84.92%
+50	Obj: 11.643,	F: 0.341,	Cf: 0.300,	Imb: 0.34,	Val: 0.351,	ValImb: 0.3,	ValObj: 0.35,	Acc: 82.63%,	cAcc: 85.30%
+100	Obj: 1.699,	F: 0.413,	Cf: 0.401,	Imb: 0.016,	Val: 0.513,	ValImb: 0.016,	ValObj: 0.51,	Acc: 87.24%,	cAcc: 86.97%
+150	Obj: 1.058,	F: 0.543,	Cf: 0.508,	Imb: 0.003,	Val: 0.685,	ValImb: 0.0038,	ValObj: 0.68,	Acc: 87.91%,	cAcc: 87.03%
+200	Obj: 0.986,	F: 0.554,	Cf: 0.515,	Imb: 0.0032,	Val: 0.697,	ValImb: 0.0045,	ValObj: 0.70,	Acc: 88.03%,	cAcc: 87.29%
+250	Obj: 20.242,	F: 7.725,	Cf: 3.186,	Imb: 0.37,	Val: 8.035,	ValImb: 0.35,	ValObj: 8.04,	Acc: 81.22%,	cAcc: 84.57%
+299	Obj: 6.497,	F: 0.561,	Cf: 0.701,	Imb: 0.1,	Val: 0.538,	ValImb: 0.11,	ValObj: 0.54,	Acc: 84.65%,	cAcc: 85.53%
+results/twins_aggressive/results_20251028_135204-156830/w/w_999
+Saving result to results/twins_aggressive/results_20251028_135204-156830/...
+
+Training on experiment 3/10...
+0	Obj: 40.293,	F: 0.691,	Cf: 0.690,	Imb: 0.3,	Val: 0.691,	ValImb: 0.3,	ValObj: 0.70,	Acc: 82.81%,	cAcc: 84.45%
+50	Obj: 9.944,	F: 0.307,	Cf: 0.288,	Imb: 0.21,	Val: 0.330,	ValImb: 0.21,	ValObj: 0.33,	Acc: 87.50%,	cAcc: 87.38%
+100	Obj: 1.647,	F: 0.444,	Cf: 0.397,	Imb: 0.2,	Val: 0.543,	ValImb: 0.2,	ValObj: 0.54,	Acc: 89.11%,	cAcc: 88.38%
+150	Obj: 1.080,	F: 0.500,	Cf: 0.464,	Imb: 0.075,	Val: 0.624,	ValImb: 0.083,	ValObj: 0.62,	Acc: 89.79%,	cAcc: 88.56%
+200	Obj: 1.001,	F: 0.509,	Cf: 0.472,	Imb: 0.01,	Val: 0.648,	ValImb: 0.0086,	ValObj: 0.65,	Acc: 89.82%,	cAcc: 88.97%
+250	Obj: 0.959,	F: 0.500,	Cf: 0.471,	Imb: 0.0048,	Val: 0.649,	ValImb: 0.0051,	ValObj: 0.65,	Acc: 90.08%,	cAcc: 89.00%
+299	Obj: 0.943,	F: 0.495,	Cf: 0.468,	Imb: 0.0043,	Val: 0.639,	ValImb: 0.004,	ValObj: 0.64,	Acc: 90.23%,	cAcc: 89.03%
+results/twins_aggressive/results_20251028_135204-156830/w/w_999
+Saving result to results/twins_aggressive/results_20251028_135204-156830/...
+
+Training on experiment 4/10...
+0	Obj: 40.289,	F: 0.691,	Cf: 0.690,	Imb: 0.4,	Val: 0.691,	ValImb: 0.51,	ValObj: 0.69,	Acc: 82.95%,	cAcc: 84.36%
+50	Obj: 11.097,	F: 0.338,	Cf: 0.351,	Imb: 0.21,	Val: 0.361,	ValImb: 0.27,	ValObj: 0.36,	Acc: 85.59%,	cAcc: 84.95%
+100	Obj: 1.555,	F: 0.469,	Cf: 0.510,	Imb: 0.044,	Val: 0.630,	ValImb: 0.048,	ValObj: 0.63,	Acc: 88.97%,	cAcc: 86.41%
+150	Obj: 1.057,	F: 0.519,	Cf: 0.539,	Imb: 0.021,	Val: 0.698,	ValImb: 0.012,	ValObj: 0.70,	Acc: 89.44%,	cAcc: 87.09%
+200	Obj: 5.986,	F: 0.630,	Cf: 0.671,	Imb: 0.11,	Val: 0.662,	ValImb: 0.16,	ValObj: 0.66,	Acc: 82.95%,	cAcc: 84.36%
+250	Obj: 1.062,	F: 0.888,	Cf: 0.858,	Imb: 0.012,	Val: 0.920,	ValImb: 0.028,	ValObj: 0.92,	Acc: 82.95%,	cAcc: 84.36%
+299	Obj: 0.573,	F: 0.990,	Cf: 0.905,	Imb: 0.0096,	Val: 1.016,	ValImb: 0.031,	ValObj: 1.02,	Acc: 82.95%,	cAcc: 84.36%
+results/twins_aggressive/results_20251028_135204-156830/w/w_999
+Saving result to results/twins_aggressive/results_20251028_135204-156830/...
+
+Training on experiment 5/10...
+0	Obj: 40.289,	F: 0.691,	Cf: 0.690,	Imb: 0.25,	Val: 0.691,	ValImb: 0.28,	ValObj: 0.69,	Acc: 82.63%,	cAcc: 84.24%
+50	Obj: 10.835,	F: 0.330,	Cf: 0.423,	Imb: 0.19,	Val: 0.395,	ValImb: 0.21,	ValObj: 0.40,	Acc: 86.74%,	cAcc: 84.62%
+100	Obj: 1.529,	F: 0.487,	Cf: 0.624,	Imb: 0.15,	Val: 0.657,	ValImb: 0.19,	ValObj: 0.66,	Acc: 87.53%,	cAcc: 84.62%
+150	Obj: 0.781,	F: 0.595,	Cf: 0.811,	Imb: 0.027,	Val: 0.803,	ValImb: 0.038,	ValObj: 0.80,	Acc: 87.97%,	cAcc: 84.54%
+200	Obj: 0.693,	F: 0.627,	Cf: 0.861,	Imb: 0.0078,	Val: 0.835,	ValImb: 0.014,	ValObj: 0.84,	Acc: 87.88%,	cAcc: 84.30%
+250	Obj: 0.645,	F: 0.640,	Cf: 0.888,	Imb: 0.0068,	Val: 0.855,	ValImb: 0.0066,	ValObj: 0.86,	Acc: 88.12%,	cAcc: 84.33%
+299	Obj: 0.618,	F: 0.640,	Cf: 0.907,	Imb: 0.0032,	Val: 0.870,	ValImb: 0.0043,	ValObj: 0.87,	Acc: 88.32%,	cAcc: 84.36%
+results/twins_aggressive/results_20251028_135204-156830/w/w_999
+Saving result to results/twins_aggressive/results_20251028_135204-156830/...
+
+Training on experiment 6/10...
+0	Obj: 40.275,	F: 0.690,	Cf: 0.690,	Imb: 0.14,	Val: 0.690,	ValImb: 0.21,	ValObj: 0.70,	Acc: 82.60%,	cAcc: 83.71%
+50	Obj: 10.738,	F: 0.308,	Cf: 0.305,	Imb: 0.22,	Val: 0.330,	ValImb: 0.24,	ValObj: 0.33,	Acc: 86.85%,	cAcc: 86.59%
+100	Obj: 4.686,	F: 0.740,	Cf: 0.711,	Imb: 0.15,	Val: 0.836,	ValImb: 0.16,	ValObj: 0.84,	Acc: 86.41%,	cAcc: 85.80%
+150	Obj: 1.074,	F: 0.457,	Cf: 0.401,	Imb: 0.12,	Val: 0.493,	ValImb: 0.15,	ValObj: 0.49,	Acc: 86.15%,	cAcc: 84.60%
+200	Obj: 0.696,	F: 0.542,	Cf: 0.727,	Imb: 0.017,	Val: 0.551,	ValImb: 0.024,	ValObj: 0.55,	Acc: 86.09%,	cAcc: 84.65%
+250	Obj: 0.547,	F: 0.788,	Cf: 0.852,	Imb: 0.0059,	Val: 0.749,	ValImb: 0.0097,	ValObj: 0.75,	Acc: 82.60%,	cAcc: 83.71%
+299	Obj: 0.467,	F: 1.007,	Cf: 0.944,	Imb: 0.0037,	Val: 0.942,	ValImb: 0.0065,	ValObj: 0.94,	Acc: 82.60%,	cAcc: 83.71%
+results/twins_aggressive/results_20251028_135204-156830/w/w_999
+Saving result to results/twins_aggressive/results_20251028_135204-156830/...
+
+Training on experiment 7/10...
+0	Obj: 40.292,	F: 0.691,	Cf: 0.690,	Imb: 0.31,	Val: 0.691,	ValImb: 0.29,	ValObj: 0.69,	Acc: 83.13%,	cAcc: 84.13%
+50	Obj: 10.423,	F: 0.312,	Cf: 0.293,	Imb: 0.23,	Val: 0.330,	ValImb: 0.21,	ValObj: 0.33,	Acc: 86.06%,	cAcc: 86.80%
+100	Obj: 1.556,	F: 0.435,	Cf: 0.410,	Imb: 0.027,	Val: 0.590,	ValImb: 0.018,	ValObj: 0.59,	Acc: 88.35%,	cAcc: 88.56%
+150	Obj: 2.126,	F: 0.832,	Cf: 0.635,	Imb: 0.1,	Val: 0.857,	ValImb: 0.091,	ValObj: 0.86,	Acc: 85.45%,	cAcc: 86.91%
+200	Obj: 0.848,	F: 0.657,	Cf: 0.715,	Imb: 0.0063,	Val: 0.670,	ValImb: 0.0054,	ValObj: 0.67,	Acc: 85.53%,	cAcc: 85.27%
+250	Obj: 0.684,	F: 0.678,	Cf: 0.798,	Imb: 0.0029,	Val: 0.688,	ValImb: 0.003,	ValObj: 0.69,	Acc: 85.50%,	cAcc: 85.24%
+299	Obj: 0.637,	F: 0.672,	Cf: 0.822,	Imb: 0.0033,	Val: 0.687,	ValImb: 0.0033,	ValObj: 0.69,	Acc: 85.65%,	cAcc: 85.24%
+results/twins_aggressive/results_20251028_135204-156830/w/w_999
+Saving result to results/twins_aggressive/results_20251028_135204-156830/...
+
+Training on experiment 8/10...
+0	Obj: 40.276,	F: 0.690,	Cf: 0.690,	Imb: 0.16,	Val: 0.690,	ValImb: 0.14,	ValObj: 0.69,	Acc: 83.39%,	cAcc: 84.21%
+50	Obj: 10.740,	F: 0.320,	Cf: 0.325,	Imb: 0.28,	Val: 0.333,	ValImb: 0.21,	ValObj: 0.33,	Acc: 84.71%,	cAcc: 84.95%
+100	Obj: 1.623,	F: 0.382,	Cf: 0.416,	Imb: 0.037,	Val: 0.512,	ValImb: 0.022,	ValObj: 0.51,	Acc: 89.61%,	cAcc: 87.47%
+150	Obj: 1.056,	F: 0.454,	Cf: 0.481,	Imb: 0.0093,	Val: 0.635,	ValImb: 0.0089,	ValObj: 0.64,	Acc: 90.05%,	cAcc: 88.17%
+200	Obj: 4.203,	F: 0.716,	Cf: 0.794,	Imb: 0.12,	Val: 0.718,	ValImb: 0.095,	ValObj: 0.72,	Acc: 83.39%,	cAcc: 84.21%
+250	Obj: 0.631,	F: 0.683,	Cf: 0.759,	Imb: 0.0056,	Val: 0.681,	ValImb: 0.0051,	ValObj: 0.68,	Acc: 83.39%,	cAcc: 84.21%
+299	Obj: 0.423,	F: 0.972,	Cf: 0.906,	Imb: 0.0091,	Val: 0.975,	ValImb: 0.0074,	ValObj: 0.97,	Acc: 83.39%,	cAcc: 84.21%
+results/twins_aggressive/results_20251028_135204-156830/w/w_999
+Saving result to results/twins_aggressive/results_20251028_135204-156830/...
+
+Training on experiment 9/10...
+0	Obj: 40.283,	F: 0.690,	Cf: 0.690,	Imb: 0.17,	Val: 0.690,	ValImb: 0.19,	ValObj: 0.70,	Acc: 82.75%,	cAcc: 84.01%
+50	Obj: 10.525,	F: 0.307,	Cf: 0.303,	Imb: 0.22,	Val: 0.313,	ValImb: 0.23,	ValObj: 0.31,	Acc: 86.71%,	cAcc: 86.91%
+100	Obj: 1.703,	F: 0.408,	Cf: 0.412,	Imb: 0.13,	Val: 0.515,	ValImb: 0.13,	ValObj: 0.52,	Acc: 89.03%,	cAcc: 87.79%
+150	Obj: 1.057,	F: 0.508,	Cf: 0.485,	Imb: 0.014,	Val: 0.640,	ValImb: 0.0052,	ValObj: 0.64,	Acc: 89.11%,	cAcc: 88.23%
+200	Obj: 0.984,	F: 0.518,	Cf: 0.495,	Imb: 0.0092,	Val: 0.657,	ValImb: 0.0028,	ValObj: 0.66,	Acc: 89.29%,	cAcc: 88.53%
+250	Obj: 0.955,	F: 0.513,	Cf: 0.496,	Imb: 0.0056,	Val: 0.673,	ValImb: 0.0012,	ValObj: 0.67,	Acc: 89.61%,	cAcc: 88.70%
+299	Obj: 0.939,	F: 0.507,	Cf: 0.493,	Imb: 0.0046,	Val: 0.672,	ValImb: 0.00083,	ValObj: 0.67,	Acc: 89.70%,	cAcc: 88.70%
+results/twins_aggressive/results_20251028_135204-156830/w/w_999
+Saving result to results/twins_aggressive/results_20251028_135204-156830/...
+
+Training on experiment 10/10...
+0	Obj: 40.281,	F: 0.690,	Cf: 0.690,	Imb: 0.24,	Val: 0.690,	ValImb: 0.2,	ValObj: 0.69,	Acc: 83.16%,	cAcc: 85.15%
+50	Obj: 9.899,	F: 0.300,	Cf: 0.297,	Imb: 0.19,	Val: 0.327,	ValImb: 0.16,	ValObj: 0.33,	Acc: 87.53%,	cAcc: 87.18%
+100	Obj: 1.677,	F: 0.483,	Cf: 0.476,	Imb: 0.061,	Val: 0.603,	ValImb: 0.041,	ValObj: 0.60,	Acc: 88.64%,	cAcc: 87.03%
+150	Obj: 1.051,	F: 0.503,	Cf: 0.538,	Imb: 0.0085,	Val: 0.663,	ValImb: 0.0028,	ValObj: 0.66,	Acc: 89.55%,	cAcc: 87.29%
+200	Obj: 0.988,	F: 0.521,	Cf: 0.544,	Imb: 0.0051,	Val: 0.674,	ValImb: 0.0012,	ValObj: 0.67,	Acc: 89.44%,	cAcc: 87.97%
+250	Obj: 40.553,	F: 1.805,	Cf: 1.193,	Imb: 0.26,	Val: 1.789,	ValImb: 0.28,	ValObj: 1.79,	Acc: 62.35%,	cAcc: 62.47%
+299	Obj: 4.683,	F: 0.923,	Cf: 1.146,	Imb: 0.23,	Val: 0.945,	ValImb: 0.22,	ValObj: 0.95,	Acc: 83.16%,	cAcc: 85.15%
+results/twins_aggressive/results_20251028_135204-156830/w/w_999
+Saving result to results/twins_aggressive/results_20251028_135204-156830/...
+

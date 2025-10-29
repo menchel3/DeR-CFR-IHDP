@@ -234,21 +234,30 @@ def evaluate_cont_ate(predictions, data, i_exp, I_subset=None,
             mu1 = mu1[I_subset]
 
     # Calculate ground truth effect
-    # For IHDP: use mu1 - mu0
-    # For TWINS: use ycf - yf for controls, yf - ycf for treated
+    # For IHDP: use mu1 - mu0 (always treatment effect)
+    # For TWINS: ITE = Y(1) - Y(0), so:
+    #   - For controls (t=0): ITE = ycf - yf (counterfactual is Y(1), factual is Y(0))
+    #   - For treated (t=1): ITE = yf - ycf (factual is Y(1), counterfactual is Y(0))
     if has_mu:
         eff = mu1 - mu0
     elif has_ycf:
-        # TWINS: calculate effect from observed and counterfactual outcomes
-        eff = ycf - yf
-        eff[t > 0] = -eff[t > 0]  # For treated units, effect is yf - ycf
+        # TWINS: calculate ITE correctly based on treatment assignment
+        eff = np.zeros_like(yf)
+        eff[t < 1] = ycf[t < 1] - yf[t < 1]  # Controls: Y(1) - Y(0)
+        eff[t > 0] = yf[t > 0] - ycf[t > 0]  # Treated: Y(1) - Y(0)
     else:
         # No ground truth available, use predictions as placeholder
-        eff = ycf_p - yf_p
-        eff[t > 0] = -eff[t > 0]
+        eff = np.zeros_like(yf_p)
+        eff[t < 1] = ycf_p[t < 1] - yf_p[t < 1]
+        eff[t > 0] = yf_p[t > 0] - ycf_p[t > 0]
 
-    eff_pred = ycf_p - yf_p;
-    eff_pred[t>0] = -eff_pred[t>0];
+    # Calculate predicted effect
+    # ycf_p is prediction of counterfactual, yf_p is prediction of factual
+    # For controls (t=0): ITE = ycf_p - yf_p (predicted Y(1) - predicted Y(0))
+    # For treated (t=1): ITE = yf_p - ycf_p (predicted Y(1) - predicted Y(0))
+    eff_pred = np.zeros_like(yf_p)
+    eff_pred[t < 1] = ycf_p[t < 1] - yf_p[t < 1]
+    eff_pred[t > 0] = yf_p[t > 0] - ycf_p[t > 0]
 
     pehe = np.sqrt(np.mean(np.square(eff_pred-eff)))
     
@@ -258,21 +267,25 @@ def evaluate_cont_ate(predictions, data, i_exp, I_subset=None,
     else:
         rmse_cfact = 0.0  # No counterfactual ground truth available
     
-    ite_pred = ycf_p - yf
-    ite_pred[t>0] = -ite_pred[t>0]
+    # ITE prediction using predicted counterfactual and observed factual
+    # For controls (t=0): ITE = ycf_p - yf (predicted Y(1) - observed Y(0))
+    # For treated (t=1): ITE = yf - ycf_p (observed Y(1) - predicted Y(0))
+    ite_pred = np.zeros_like(yf)
+    ite_pred[t < 1] = ycf_p[t < 1] - yf[t < 1]
+    ite_pred[t > 0] = yf[t > 0] - ycf_p[t > 0]
     rmse_ite = np.sqrt(np.mean(np.square(ite_pred-eff)))
 
     ate_pred = np.mean(eff_pred)
     ate = np.mean(eff)
-    bias_ate = ate_pred-ate
+    bias_ate = np.abs(ate_pred-ate)
 
     att_pred = np.mean(eff_pred[t>0])
     att = np.mean(eff[t>0])
-    bias_att = att_pred - att
+    bias_att = np.abs(att_pred - att)
 
     atc_pred = np.mean(eff_pred[t<1])
     atc = np.mean(eff[t<1])
-    bias_atc = atc_pred - atc
+    bias_atc = np.abs(atc_pred - atc)
 
     pehe_appr = pehe_nn(yf_p, ycf_p, yf, x, t, nn_t, nn_c)
 
@@ -505,6 +518,7 @@ def evaluate(output_dir, data_path_train, data_path_test=None, binary=False, mod
         try:
             eval_train = evaluate_result(result['train'], data_train,
                 validation=False, multiple_exps=multiple_exps, binary=binary, mode=mode, bin_or_cont = bin_or_cont)
+            #？？？？怎么会是train
             eval_valid = evaluate_result(result['train'], data_train,
                 validation=True, multiple_exps=multiple_exps, binary=binary, mode=mode, bin_or_cont = bin_or_cont)
 

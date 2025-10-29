@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "main.py", line 461, in main
+    evaluate(eval_dir)
+  File "C:\Users\0702ty\OneDrive\Desktop\DRLECB\DeR-CFR-main\DeR-CFR-IHDP\evaluate.py", line 62, in evaluate
+    binary=binary,mode=mode, bin_or_cont=bin_or_cont)
+  File "C:\Users\0702ty\OneDrive\Desktop\DRLECB\DeR-CFR-main\DeR-CFR-IHDP\cfr_function\evaluation.py", line 543, in evaluate
+    v = np.array([eval_results[i]['train'][k] for i in range(len(eval_results))])
+ValueError: could not broadcast input array from shape (10,26) into shape (10)

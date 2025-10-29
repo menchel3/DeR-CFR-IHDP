@@ -1,0 +1,8 @@
+Training with hyperparameters: p_coef_y=50, p_coef_alpha=0.01, p_coef_beta=0.001, p_coef_gamma=0.0001, p_coef_mu=0.1, p_coef_lambda=0.1. 
+Training data: C:/Users/0702ty/OneDrive/Desktop/DRLECB/twins_1-10.train.npz
+Test data:     C:/Users/0702ty/OneDrive/Desktop/DRLECB/twins_1-10.test.npz
+Loaded data with shape [40]
+Defining graph...
+
+Training on experiment 1/10...
+0	Obj: 34.658,	F: 0.690,	Cf: 0.690,	Imb: 0.13,	Val: 0.690,	ValImb: 0.15,	ValObj: 0.69,	Acc: 83.16%,	cAcc: 84.27%
